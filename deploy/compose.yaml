@@ -1,0 +1,8 @@
+# Lives on the server at /opt/ghana-paye-api/compose.yaml (the deploy job copies it there).
+# The deploy job sets IMAGE_TAG to the commit it just built, e.g. sha-1a2b3c4.
+services:
+  api:
+    image: ghcr.io/buildwithmoi/ghana-paye-api:${IMAGE_TAG:-main}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000" # only reachable on the server itself; put nginx in front for public traffic

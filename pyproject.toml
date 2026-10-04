@@ -1,0 +1,16 @@
+[project]
+name = "ghana-paye-api"
+version = "1.0.0"
+description = "Ghana PAYE and SSNIT API, used to show a GitHub Actions CI/CD pipeline"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# pycodestyle, pyflakes, import order, modern syntax, common bug patterns
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
